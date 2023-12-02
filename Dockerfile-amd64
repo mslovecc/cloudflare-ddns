@@ -1,6 +1,9 @@
 # Use Alpine as the base image due to its small size
 FROM amd64/alpine:3.18.3
 
+# Change repositories
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+
 # Set timezone
 RUN apk --no-cache add tzdata \
     && ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
