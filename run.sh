@@ -13,7 +13,7 @@ log() {
 
 # Function to check internet connectivity
 check_internet() {
-    ping -c 1 8.8.8.8 > /dev/null 2>&1
+    ping -c 1 114.114.114.114 > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         log "ERROR: No Internet connection detected."
         return 1
@@ -37,7 +37,7 @@ while true; do
     if check_internet; then
 
     # Fetch the latest public IP
-    PUBLIC_IP=$(curl -s http://ipinfo.io/ip)
+    PUBLIC_IP=$(curl -s https://ip.3322.net)
     sleep $SLEEP_DURATION
 
         # Check if the IP has changed since the last update
