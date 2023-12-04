@@ -37,7 +37,7 @@ while true; do
     if check_internet; then
 
     # Fetch the latest public IP
-    PUBLIC_IP=$(curl -s https://ip.3322.net)
+    PUBLIC_IP=$(curl -s https://ip.ddnspod.com -H "Accept: text")
     sleep $SLEEP_DURATION
 
         # Check if the IP has changed since the last update
